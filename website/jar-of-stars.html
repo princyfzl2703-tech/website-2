@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Jar of Stars ✨</title>
+    <link rel="stylesheet" href="jar-of-stars.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<h1 class="jar-heading">
+    ✧ A Thousand Reasons<br>
+    <span>Why I Love You</span> ✧
+</h1>
+
+</head>
+
+
+<body>
+
+    <!-- Jar homepage -->
+    <main class="jar-page" id="jarPage">
+        <div class="jar-wrapper" id="jarWrapper">
+            <img
+                src="jarr.png"
+                alt="A magical jar filled with stars"
+                class="jar-image"
+            >
+        </div>
+    </main>
+
+    <!-- Flying star -->
+    <img
+        src="purple-star.png"
+        alt=""
+        class="flying-star"
+        id="flyingStar"
+    >
+
+    <!-- Black transition -->
+    <div class="black-transition" id="blackTransition"></div>
+
+    <!-- Reason screen -->
+    <section class="reason-screen" id="reasonScreen">
+
+        <div class="paper-container">
+
+            <img
+                src="vintage-paper.png"
+                alt=""
+                class="vintage-paper"
+            >
+
+            <!-- Reason text -->
+            <div class="reason-content">
+                <div class="reason-number" id="reasonNumber">
+                    REASON #001
+                </div>
+
+                <p class="reason-text" id="reasonText">
+                    Because you make even ordinary days feel special.
+                </p>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="reason-buttons">
+                <button
+                    type="button"
+                    class="reason-button"
+                    onclick="goBack()"
+                >
+                    Go Back
+                </button>
+
+                <button
+                    type="button"
+                    class="reason-button"
+                    onclick="anotherReason()"
+                >
+                    Unfold Another ✨
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Your existing JavaScript -->
+    <script src="jar-of-stars.js"></script>
+
+</body>
+</html>

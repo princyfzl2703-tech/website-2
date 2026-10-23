@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        160deg,
+        #4b0d17,
+        #6b1320,
+        #8d1c30,
+        #b12d48
+    );
+
+    font-family:'Caveat',cursive;
+
+}
+
+
+/* Letter wrapper */
+
+.letter-container{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+/* Normal paper */
+
+.paper{
+
+    width:min(90%,650px);
+
+    min-height:75vh;
+
+    padding:45px 40px;
+
+    position:relative;
+
+    background-color:#fffdf8;
+
+    border-radius:6px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.3);
+
+    transform:rotate(-1deg);
+
+    animation:letterAppear 1.5s ease forwards;
+
+}
+
+
+
+/* Slight paper color layer */
+
+
+
+
+
+/* Heading */
+
+.paper h1{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(35px,6vw,55px);
+
+    color:#8b1e3f;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* Letter text */
+
+.message{
+
+    font-size:32px  ;
+
+    line-height:1.8;
+
+    color:#3d3030;
+
+}
+
+
+
+/* Entrance */
+
+@keyframes letterAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(70px)
+        rotate(-5deg)
+        scale(.92);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        rotate(-1deg)
+        scale(1);
+
+    }
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .paper{
+
+        padding:35px 25px;
+
+        min-height:80vh;
+
+    }
+
+
+    .message{
+
+        font-size:22px;
+
+    }
+
+}
+
+.go-btn{
+
+    display:block;
+
+    margin:40px auto 0;
+
+    padding:14px 40px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#8b1e3f;
+
+    color:white;
+
+    font-family:'Caveat',cursive;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+}
+
+
+.go-btn:hover{
+
+    transform:scale(1.08);
+
+}

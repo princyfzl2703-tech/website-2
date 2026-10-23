@@ -1,0 +1,764 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    font-family: 'Poppins', sans-serif;
+    color: #fff5f7;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(180, 55, 85, 0.28),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 180, 195, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(255, 180, 195, 0.08),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #270710,
+            #4b0d20 40%,
+            #69142d 65%,
+            #300914
+        );
+}
+
+
+/* =========================
+   BACKGROUND VIGNETTE
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(15, 2, 7, 0.45) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   AMBIENT STARS
+========================= */
+
+.ambient {
+    position: fixed;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: rgba(255, 220, 228, 0.55);
+
+    pointer-events: none;
+
+    animation: floatStar 5s ease-in-out infinite alternate;
+}
+
+
+.ambient-1 {
+    top: 12%;
+    left: 13%;
+    font-size: 20px;
+}
+
+.ambient-2 {
+    top: 23%;
+    right: 15%;
+    font-size: 13px;
+    animation-delay: 1s;
+}
+
+.ambient-3 {
+    top: 67%;
+    left: 10%;
+    font-size: 25px;
+    animation-delay: 2s;
+}
+
+.ambient-4 {
+    bottom: 15%;
+    right: 13%;
+    font-size: 18px;
+    animation-delay: 0.7s;
+}
+
+.ambient-5 {
+    top: 45%;
+    left: 5%;
+    font-size: 12px;
+    animation-delay: 1.5s;
+}
+
+.ambient-6 {
+    top: 58%;
+    right: 7%;
+    font-size: 14px;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes floatStar {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.25;
+    }
+
+    to {
+        transform: translateY(-15px) rotate(12deg);
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.home-container {
+
+    width: min(92%, 760px);
+
+    padding: 58px 65px 45px;
+
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 220, 228, 0.20);
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 230, 235, 0.085),
+            rgba(255, 200, 215, 0.025)
+        );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.38),
+        0 0 80px rgba(180, 40, 75, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+    animation: containerIn 1s ease both;
+}
+
+
+@keyframes containerIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   INNER FRAME
+========================= */
+
+.home-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border: 1px solid rgba(255, 220, 228, 0.10);
+
+    border-radius: 25px;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TOP LABEL
+========================= */
+
+.top-label {
+
+    position: relative;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    color: rgba(255, 220, 228, 0.58);
+
+    margin-bottom: 13px;
+
+    animation: fadeUp 0.8s ease 0.2s both;
+}
+
+
+/* =========================
+   ORNAMENT
+========================= */
+
+.ornament {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 210, 220, 0.45);
+
+    margin-bottom: 13px;
+
+    animation: fadeUp 0.8s ease 0.3s both;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+
+    position: relative;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(40px, 6vw, 58px);
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing: 0.3px;
+
+    color: #fff7f8;
+
+    text-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.35);
+
+    margin-bottom: 18px;
+
+    animation: headingIn 1s ease 0.35s both;
+}
+
+
+h1 span {
+
+    color: #f6d6dc;
+
+    font-weight: 600;
+}
+
+
+@keyframes headingIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.home-subtitle {
+
+    font-size: 11px;
+
+    font-weight: 300;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255, 225, 232, 0.62);
+
+    margin-bottom: 42px;
+
+    animation: fadeUp 0.9s ease 0.55s both;
+}
+
+
+/* =========================
+   BUTTON GRID
+========================= */
+
+.button-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    max-width: 620px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button-grid button {
+
+    position: relative;
+
+    min-height: 112px;
+
+    padding: 22px 45px 22px 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    border: 1px solid rgba(255, 220, 228, 0.18);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 220, 228, 0.13),
+            rgba(255, 190, 210, 0.045)
+        );
+
+    color: #fff5f7;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255,255,255,0.09);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+
+    animation: buttonIn 0.8s ease both;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.button-icon {
+
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 220, 228, 0.09);
+
+    font-size: 19px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.button-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.button-text strong {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #fff7f8;
+}
+
+
+.button-text small {
+
+    font-size: 9px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.6px;
+
+    color: rgba(255, 225, 231, 0.52);
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.button-arrow {
+
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    font-size: 13px;
+
+    color: rgba(255, 220, 228, 0.55);
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   SHINE
+========================= */
+
+.button-grid button::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.10),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.7s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.button-grid button:hover {
+
+    transform: translateY(-7px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 225, 232, 0.20),
+            rgba(255, 195, 212, 0.075)
+        );
+
+    border-color: rgba(255, 220, 228, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.28),
+        0 0 30px rgba(255,160,185,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.13);
+}
+
+
+.button-grid button:hover::after {
+
+    left: 140%;
+}
+
+
+.button-grid button:hover .button-arrow {
+
+    transform: translate(3px,-3px);
+
+    color: #fff;
+}
+
+
+/* =========================
+   ACTIVE
+========================= */
+
+.button-grid button:active {
+
+    transform: translateY(-2px) scale(0.985);
+}
+
+
+/* =========================
+   BUTTON ANIMATION
+========================= */
+
+.button-grid button:nth-child(1) {
+    animation-delay: 0.65s;
+}
+
+.button-grid button:nth-child(2) {
+    animation-delay: 0.78s;
+}
+
+.button-grid button:nth-child(3) {
+    animation-delay: 0.91s;
+}
+
+.button-grid button:nth-child(4) {
+    animation-delay: 1.04s;
+}
+
+
+@keyframes buttonIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.bottom-note {
+
+    margin-top: 34px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 220, 228, 0.45);
+
+    animation: fadeUp 1s ease 1.2s both;
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .home-container {
+
+        width: 100%;
+
+        padding: 45px 22px 35px;
+
+        border-radius: 28px;
+    }
+
+    .home-container::before {
+        inset: 10px;
+        border-radius: 21px;
+    }
+
+    .top-label {
+        font-size: 7px;
+        letter-spacing: 3px;
+    }
+
+    .ornament {
+        font-size: 11px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .home-subtitle {
+        font-size: 9px;
+        margin-bottom: 32px;
+    }
+
+    .button-grid {
+        gap: 12px;
+    }
+
+    .button-grid button {
+
+        min-height: 100px;
+
+        padding: 18px 32px 18px 15px;
+
+        border-radius: 17px;
+    }
+
+    .button-icon {
+
+        width: 38px;
+        height: 38px;
+
+        margin-right: 10px;
+
+        border-radius: 11px;
+
+        font-size: 16px;
+    }
+
+    .button-text strong {
+        font-size: 17px;
+    }
+
+    .button-text small {
+        font-size: 7px;
+    }
+
+    .bottom-note {
+        margin-top: 27px;
+        font-size: 11px;
+    }
+
+    .ambient-1 {
+        left: 5%;
+    }
+
+    .ambient-2 {
+        right: 5%;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .home-container {
+        padding: 38px 15px 30px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .button-grid {
+        gap: 9px;
+    }
+
+    .button-grid button {
+        min-height: 90px;
+    }
+
+    .button-text strong {
+        font-size: 15px;
+    }
+
+    .button-text small {
+        display: none;
+    }
+}

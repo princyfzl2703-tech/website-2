@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Surprise ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="gift-surprise.css">
+</head>
+<body>
+
+  <section class="gift-surprise" id="giftSurprise">
+    <p class="gift-eyebrow">A LITTLE SOMETHING FOR YOU</p>
+    <h2 class="gift-heading">A surprise for my Rasmalai ❤️</h2>
+    <p class="gift-subtitle">Pssst... there's a little gift waiting for you.</p>
+
+    <button class="gift-stage" id="giftButton" type="button" aria-label="Open your surprise gift">
+      <span class="gift-sparkle sparkle-one">✦</span>
+      <span class="gift-sparkle sparkle-two">♡</span>
+      <span class="gift-sparkle sparkle-three">✧</span>
+
+      <span class="gift-box" id="giftBox">
+        <span class="gift-lid">
+          <span class="gift-lid-ribbon"></span>
+          <span class="gift-bow">
+            <span class="bow-loop bow-left"></span>
+            <span class="bow-loop bow-right"></span>
+            <span class="bow-knot"></span>
+          </span>
+        </span>
+        <span class="gift-body">
+          <span class="gift-ribbon"></span>
+          <span class="gift-heart">♥</span>
+        </span>
+      </span>
+    </button>
+
+    <p class="gift-hint" id="giftHint">Tap the gift to open it ♡</p>
+
+    <div class="gift-reveal" id="giftReveal" aria-hidden="true">
+      <div class="gift-photo-frame">
+        <img src="meeeeee.png" alt="Your favourite human" class="gift-photo">
+        <span class="photo-heart">♥</span>
+      </div>
+
+      <h3 class="gift-punchline">
+        What could be a better surprise than having
+        <span>ME</span> in your life? 💋
+      </h3>
+
+      <p class="gift-extra">
+        Your favourite human. Your daily dose of nonsense.
+        Your irreplaceable headache. ❤️
+      </p>
+
+      <button class="gift-again" id="giftAgain" type="button">
+        Okay, okay... you can thank me later. ♡
+      </button>
+    </div>
+    <button class="back-home-btn" onclick="goHome()">
+    ← Back to Homepage ♡
+</button>
+  </section>
+
+  <script>
+    const giftSection = document.getElementById("giftSurprise");
+    const giftButton = document.getElementById("giftButton");
+    const giftReveal = document.getElementById("giftReveal");
+    const giftAgain = document.getElementById("giftAgain");
+
+    giftButton.addEventListener("click", () => {
+      giftSection.classList.add("is-open");
+      giftReveal.setAttribute("aria-hidden", "false");
+      giftButton.setAttribute("aria-label", "Your gift is open");
+    });
+
+    giftAgain.addEventListener("click", () => {
+      giftSection.classList.remove("is-open");
+      giftReveal.setAttribute("aria-hidden", "true");
+      giftButton.setAttribute("aria-label", "Open your surprise gift");
+      giftButton.focus();
+    });
+
+    function goHome() {
+    window.location.href = "homepage.html";
+}
+  </script>
+
+</body>
+</html>
